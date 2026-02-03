@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #eae6e3;
+      color: #4a4a4a;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(rgba(234, 230, 227, 0.2), rgba(234, 230, 227, 0.2)), url('fathima.jpeg') no-repeat center center/cover;
+    }
+
+    .hero::before {
+      content: "PORTFOLIO";
+      position: absolute;
+      font-size: 180px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: 20px;
+      white-space: nowrap;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 72px;
+      letter-spacing: 10px;
+      font-weight: 600;
+    }
+
+    .name-badge {
+      margin: 40px auto 10px;
+      padding: 14px 40px;
+      background: #f2f0ee;
+      border-radius: 40px;
+      display: inline-block;
+      box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08),
+        -8px -8px 16px rgba(255, 255, 255, 0.9);
+    }
+
+    .role {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: #888;
+    }
+
+
+
+    /* ---------- SECTIONS ---------- */
+    section {
+      padding: 100px 10%;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    /* ---------- SCROLL REVEAL ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---------- CARD ---------- */
+    .card {
+      background: #f2f0ee;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08),
+        -8px -8px 16px rgba(255, 255, 255, 0.9);
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about-card p {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #666;
+      max-width: 800px;
+    }
+
+    /* ---------- SKILLS ---------- */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .skill {
+      padding: 12px 24px;
+      background: #eae6e3;
+      border-radius: 30px;
+      font-size: 13px;
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.08),
+        -6px -6px 12px rgba(255, 255, 255, 0.9);
+    }
+
+    /* ---------- PROJECTS ---------- */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+
+    .project-card {
+      background: #f2f0ee;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08),
+        -8px -8px 16px rgba(255, 255, 255, 0.9);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 10px;
+    }
+
+    .project-content p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .project-content a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 24px;
+      background: #eae6e3;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 13px;
+      color: #333;
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.08),
+        -6px -6px 12px rgba(255, 255, 255, 0.9);
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact {
+      text-align: center;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact a {
+      display: inline-block;
+      padding: 14px 40px;
+      background: #f2f0ee;
+      border-radius: 40px;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08),
+        -8px -8px 16px rgba(255, 255, 255, 0.9);
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media(max-width:768px) {
+      .hero h1 {
+        font-size: 48px;
+        letter-spacing: 6px;
+      }
+
+      .hero::before {
+        font-size: 100px;
+        letter-spacing: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content reveal">
+    <!--    <h1>PORTFOLIO</h1> -->
+      <div class="name-badge">fathima bukad</div>
+      <div class="role">GRAPHIC DESIGNER</div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="reveal">
+    <h2>About Me</h2>
+    <div class="card about-card">
+      <p>
+        I’m a graphic designer who enjoys crafting clean, modern, and meaningful
+        visual experiences that balance creativity and clarity.
+      </p>
+
+      <div class="skills">
+        <div class="skill">Brand Identity</div>
+        <div class="skill">UI / UX Design</div>
+        <div class="skill">Typography</div>
+        <div class="skill">Figma</div>
+        <div class="skill">Illustrator</div>
+        <div class="skill">Photoshop</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="reveal">
+    <h2>Selected Works</h2>
+    <div class="projects">
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="">
+        <div class="project-content">
+          <h3>Brand Identity</h3>
+          <p>Minimal branding system for a creative startup.</p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="">
+        <div class="project-content">
+          <h3>UI Design Concept</h3>
+          <p>Soft and clean interface design for mobile app.</p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact reveal">
+    <h2>Let’s Work Together</h2>
+    <p>Have a project or idea? Let’s build something great.</p><br <div class="contact-buttons">
+    <a href="mailto:yourmail@example.com">Contact Me</a><br><br>
+    <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+    </div>
+  </section>
+
+  <!-- ---------- SCROLL JS ---------- -->
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    window.addEventListener('scroll', () => {
+      const trigger = window.innerHeight * 0.85;
+      reveals.forEach(el => {
+        if (el.getBoundingClientRect().top < trigger) {
+          el.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
